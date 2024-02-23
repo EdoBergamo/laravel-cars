@@ -15,7 +15,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        return view("admin.cars.index");
+        $cars = Car::all();
+        return view("admin.cars.index", compact("cars"));
     }
     /**
      * Show the form for creating a new resource.
