@@ -10,7 +10,7 @@
                     </div>
 
                     <div>
-                        <a href=" "><button class="btn btn-primary">Add New Car</button></a>
+                        <a href=" {{ route("admin.cars.create")}} "><button class="btn btn-primary">Add New Car</button></a>
                     </div>    
                </div>
             </div>
@@ -42,7 +42,10 @@
                                 <td>{{ $car->chilometri}}</td>
                                 <td>{{ $car->colore}}</td>
                                 <td>{{ $car->anno}}</td>
-                                
+                                <td>
+                                    <a href="{{ route("admin.cars.show", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
+                                    <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
+                                </td>
                              {{--    <td>
                                     <a href="{{ route("admin.projects.show", ["project" => $project->id])}}" class="btn btn-sm btn-square btn-primary"><i class=" fa-solid fa-eye"></i></a>
                                     <a href="{{ route("admin.projects.edit", ["project" => $project->id])}}" class="btn btn-sm btn-square btn-warning"><i class=" fa-solid fa-edit"></i></a>

@@ -25,7 +25,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.cars.create");
     }
 
     /**
@@ -36,7 +36,15 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $car = new Car();
+    
+       
+       
+        $car->save();
+
+        return redirect()->route("admin.cars.index");
     }
 
     /**
@@ -45,9 +53,12 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function show(Car $car)
+    public function show($id)
     {
-        return view ("admin.cars.show", compact("car"));
+        // Trova il post corrispondente all'ID fornito
+        $car = Car::findOrFail($id);
+        // Passa il post alla vista
+        return view('admin.cars.show', compact('car'));
     }
 
     /**
@@ -58,7 +69,7 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+        return view ("admin.cars.edit", compact ("car"));
     }
 
     /**
@@ -70,7 +81,11 @@ class CarController extends Controller
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
-        //
+        $form_data = $request->all();
+       
+        $car->update($form_data);
+
+        return redirect()->route("admin.cars.index");
     }
 
     /**
@@ -81,6 +96,12 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        {
+            // Trova il post corrispondente all'istanza fornita
+            $car->delete();
+            
+            // Reindirizza alla pagina di visualizzazione dei post o a qualsiasi altra pagina necessaria dopo l'eliminazione
+            return redirect()->route('admin.car.index')->with('success', 'Il post è stato eliminato con successo.');
+        }
     }
 }

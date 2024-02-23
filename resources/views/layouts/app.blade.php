@@ -97,8 +97,8 @@
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
-                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.show_cars" ? "bg-primary" : "" }}"
-                                href=" {{-- {{ route("admin.cars.show", ["car" =>$car->id]) }}  --}} ">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.show" ? "bg-primary" : "" }}"
+                                href="  {{ route("admin.cars.show", ["car" =>$car->id]) }} ">
                                 <i class="fa-solid fa-car fa-lg fa-fw"></i>Cars
                                 </a>
                             </li>
