@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Car;
+use Faker\Generator as Faker;
 
 class CarSeeder extends Seeder
 {
@@ -12,8 +14,13 @@ class CarSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        for($i=0;$i<5;$i++){
+
+            $car->marca = $faker->words(1, true);
+
+        }
+        
     }
 }
