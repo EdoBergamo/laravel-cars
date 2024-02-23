@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('marca', 30);
             $table->string('modello', 40);
             $table->string('alimentazione', 15);
-            $table->float('prezzo', 8, 2);
+            $table->integer('prezzo');
             $table->tinyInteger('num_porte');
             $table->integer('chilometri')->nullable();
             $table->string('colore');
