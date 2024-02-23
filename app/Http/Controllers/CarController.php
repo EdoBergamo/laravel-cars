@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
-
+use App\Http\Controllers\Controller;
 class CarController extends Controller
 {
     /**
@@ -40,7 +40,7 @@ class CarController extends Controller
 
         $car = new Car();
     
-       
+        $car->fill($form_data);
        
         $car->save();
 
@@ -53,12 +53,9 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Car $car)
     {
-        // Trova il post corrispondente all'ID fornito
-        $car = Car::findOrFail($id);
-        // Passa il post alla vista
-        return view('admin.cars.show', compact('car'));
+        return view ("admin.cars.show", compact("car"));
     }
 
     /**
@@ -97,11 +94,8 @@ class CarController extends Controller
     public function destroy(Car $car)
     {
         {
-            // Trova il post corrispondente all'istanza fornita
             $car->delete();
-            
-            // Reindirizza alla pagina di visualizzazione dei post o a qualsiasi altra pagina necessaria dopo l'eliminazione
-            return redirect()->route('admin.car.index')->with('success', 'Il post è stato eliminato con successo.');
+            return redirect()->route("admin.cars.index", ["car" => $car]);
         }
     }
 }

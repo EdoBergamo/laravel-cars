@@ -14,64 +14,64 @@
                 </ul>
             </div>
         @endif
-            <h2 class="text-center">Modifica dati auto</h2>
+            <h2 class="text-center">Aggiungi dati auto</h2>
         </div>
         <div class="col-12">
-            <form action="{{ route("admin.cars.update", $car->id) }}" method="POST">
+            <form action="{{ route("admin.cars.store") }}" method="POST">
             @csrf
-            @method("PUT")
+            
             <div class="form-group">
                 <label class="mt-3" for="marca">Marca</label>
-                <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca" required  value="{{ old("marca") ?? $car->marca }}">
+                <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca" required  value="{{ old("marca")  }}">
                 @error('marca')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="modello">Modello</label>
-                <textarea type="text" name="modello" id="modello" class="form-control" placeholder="Modello " > {{ old("modello") ?? $car->modello }}</textarea>
+                <textarea type="text" name="modello" id="modello" class="form-control" placeholder="Modello " > {{ old("modello")  }}</textarea>
                 @error('modello')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="alimentazione">Alimentazione</label>
-                <textarea type="text" name="alimentazione" id="alimentazione" class="form-control" placeholder="Alimentazione " > {{ old("alimentazione") ?? $car->alimentazione }}</textarea>
+                <textarea type="text" name="alimentazione" id="alimentazione" class="form-control" placeholder="Alimentazione " > {{ old("alimentazione")  }}</textarea>
                 @error('alimentazione')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="prezzo">Prezzo</label>
-                <textarea type="text" name="prezzo" id="prezzo" class="form-control" placeholder="Prezzo " > {{ old("prezzo") ?? $car->prezzo }}</textarea>
+                <textarea type="text" name="prezzo" id="prezzo" class="form-control" placeholder="Prezzo " > {{ old("prezzo")  }}</textarea>
                 @error('prezzo')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="num_porte">Numero porte</label>
-                <textarea type="text" name="num_porte" id="num_porte" class="form-control" placeholder="Numero porte" > {{ old("num_porte") ?? $car->num_porte }}</textarea>
+                <textarea type="text" name="num_porte" id="num_porte" class="form-control" placeholder="Numero porte" > {{ old("num_porte")  }}</textarea>
                 @error('num_porte')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="chilometri">Km</label>
-                <textarea type="text" name="chilometri" id="chilometri" class="form-control" placeholder="Km auto" > {{ old("chilometri") ?? $car->chilometri }}</textarea>
+                <textarea type="text" name="chilometri" id="chilometri" class="form-control" placeholder="Km auto" > {{ old("chilometri")  }}</textarea>
                 @error('chilometri')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="colore">Colore</label>
-                <textarea type="text" name="colore" id="colore" class="form-control" placeholder="Colore auto" > {{ old("colore") ?? $car->colore }}</textarea>
+                <textarea type="text" name="colore" id="colore" class="form-control" placeholder="Colore auto" > {{ old("colore")  }}</textarea>
                 @error('colore')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="anno">Anno</label>
-                <textarea type="text" name="anno" id="anno" class="form-control" placeholder="Descrizione fumetto" > {{ old("anno") ?? $car->anno }}</textarea>
+                <textarea type="text" name="anno" id="anno" class="form-control" placeholder="Descrizione fumetto" > {{ old("anno")}}</textarea>
                 @error('anno')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror

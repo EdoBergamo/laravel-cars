@@ -95,20 +95,20 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Dashboard
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{--  <li class="nav-item">
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.show" ? "bg-primary" : "" }}"
-                                href="  {{ route("admin.cars.show", ["car" =>$car->id]) }} ">
+                                href="  {{ route("admin.cars.show", ["car" => $car->id ])}} ">
                                 <i class="fa-solid fa-car fa-lg fa-fw"></i>Cars
                                 </a>
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.edit" ? "bg-primary" : "" }}"
-                                href="  {{ route("admin.cars.edit", ["car" =>$car->id]) }} ">
+                                href="  {{ route("admin.cars.edit", ["car" => $car->id ])}}">
                                 <i class="fa-solid fa-edit fa-lg fa-fw"></i>Modifca
                                 </a>
-                            </li>
+                            </li>  --}}
                         </ul>
                     </main>
                 </div>
