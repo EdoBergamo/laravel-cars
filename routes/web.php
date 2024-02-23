@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
-use App\Http\Controllers\Admin\CarController as CarController;
+use App\Http\Controllers\CarController as CarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +15,10 @@ use App\Http\Controllers\Admin\CarController as CarController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/* 
+
 Route::get('/', function () {
     return view('welcome');
-}); */
+}); 
 
 Route::middleware(["auth", "verified"])->name("admin.")->prefix("admin")->group(function(){
     Route::get("/", [DashboardController::class, "index"])->name("dashboard");

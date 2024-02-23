@@ -15,7 +15,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        return view("welcome");
+        return view("admin.cars.index");
     }
     /**
      * Show the form for creating a new resource.
@@ -46,7 +46,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        return view ("admin.cars.show", compact("car"));
     }
 
     /**
