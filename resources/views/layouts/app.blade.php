@@ -92,7 +92,7 @@
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.index" ? "bg-primary" : "" }}"
                                 href="{{ route("admin.cars.index") }}"> 
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Dashboard
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Cars
                                 </a>
                             </li>
                             {{--  <li class="nav-item">
