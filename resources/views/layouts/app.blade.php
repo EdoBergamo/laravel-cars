@@ -102,6 +102,13 @@
                                 <i class="fa-solid fa-car fa-lg fa-fw"></i>Cars
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                {{ Route::currentRouteName() }}
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.edit" ? "bg-primary" : "" }}"
+                                href="  {{ route("admin.cars.edit", ["car" =>$car->id]) }} ">
+                                <i class="fa-solid fa-edit fa-lg fa-fw"></i>Modifca
+                                </a>
+                            </li>
                         </ul>
                     </main>
                 </div>

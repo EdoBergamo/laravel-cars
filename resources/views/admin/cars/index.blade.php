@@ -45,6 +45,8 @@
                                 <td>
                                     <a href="{{ route("admin.cars.show", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
                                     <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
+                                    <a href="{{ route("admin.cars.destroy", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-danger"><i class="fas fa-trash"></i></button></a>
+
                                 </td>
                              {{--    <td>
                                     <a href="{{ route("admin.projects.show", ["project" => $project->id])}}" class="btn btn-sm btn-square btn-primary"><i class=" fa-solid fa-eye"></i></a>

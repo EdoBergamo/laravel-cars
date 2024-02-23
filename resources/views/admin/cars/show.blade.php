@@ -17,7 +17,7 @@
                         <th>Km</th>
                         <th>Colore</th>
                         <th>Anno</th>
-                        <th>Tools</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
