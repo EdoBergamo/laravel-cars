@@ -32,7 +32,7 @@
             <div class="form-group">
                 <label class="mt-3" for="price">Prezzo</label>
 
-                <textarea type="text" name="price" id="price" class="form-control" placeholder="Prezzo">{{ $optional->price }}</textarea>
+                <input type="number" name="price" id="price" class="form-control" placeholder="Prezzo" value="{{ $optional->price }}">
 
                 @error('price')
                     <div class ="text-danger">{{ $message }}</div>
@@ -40,7 +40,14 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="type">Tipo</label>
-                <textarea type="text" name="type" id="type" class="form-control" placeholder="Tipo" >{{ $optional->type }}</textarea>
+                <select class="form-select" name="type">
+                    <option selected>Optionals</option>
+                    <option value="Cerchi in lega">Cerchi in lega</option>
+                    <option value="Sedili riscaldati">Sedili riscaldati</option>
+                    <option value="Interni in pelle">Interni in pelle</option>
+                    <option value="Fari xenon">Fari xenon</option>
+                    <option value="Impianto audio premium">Impianto audio premium</option>
+                  </select>
 
                 @error('type')
                     <div class ="text-danger">{{ $message }}</div>
