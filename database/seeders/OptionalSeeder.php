@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Faker\Generator as Faker;
 use App\Models\Optional;
 
 class OptionalSeeder extends Seeder
@@ -14,9 +14,9 @@ class OptionalSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        $array = [
+ /*        $array = [
 
             "Tettuccio panoramico",
             "Sedili riscaldati",
@@ -40,11 +40,9 @@ class OptionalSeeder extends Seeder
             "estetico",
             "QoL"
         ];
-
-        $optional = new Optional();
-
-        foreach($array as $item){
-
+        
+        foreach($array as $item){ 
+            $optional = new Optional();
             $optional->name($item); 
             $optional->save();
         }
@@ -59,7 +57,15 @@ class OptionalSeeder extends Seeder
             $optional->save();
         }
             
-        }
-    }
+        } */
 
+        for($i=0;$i<5;$i++){
+            $optional = new optional();
+            $optional->name = $faker->words(1, true);
+            $optional->price = $faker->numberBetween(2000, 10000);
+            $optional->type = $faker->words(1, true);
+            $optional->save();
+    }
+}
+}
 

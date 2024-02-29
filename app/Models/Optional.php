@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Car;
+
 
 class Optional extends Model
 {
@@ -13,7 +13,7 @@ class Optional extends Model
     protected $fillable = ["name","price","type"];
 
     public function cars() {
-        return $this->belongsTo(Car::class);
+        return $this->belongsToMany(Car::class);
     }
 }
 
