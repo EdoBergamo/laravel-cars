@@ -9,7 +9,7 @@ const deleteButtons = document.querySelectorAll(".btn-danger");
 
 deleteButtons.forEach((button) => {
     button.addEventListener("click", function(){
-        let id = button.getAttribute("data-id");
+        let id = button.getAttribute("data-types");
         let optional = button.getAttribute("data-type")
 
         let url = `${window.location.origin}/admin/${optional}/${id}`;
