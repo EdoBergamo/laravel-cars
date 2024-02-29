@@ -62,8 +62,8 @@ class CarHouseController extends Controller
      */
     public function edit(CarHouse $carHouse)
     {
-
-        return view ("admin.cars.edit", compact ( "carHouse"));
+        $carhouses = CarHouse::all();
+        return view ("admin.car_houses.edit", compact ( "carhouses"));
     }
 
     /**
@@ -75,7 +75,9 @@ class CarHouseController extends Controller
      */
     public function update(UpdateCarHouseRequest $request, CarHouse $carHouse)
     {
-        //
+        $form = $request->all();
+        $carhouse->update($form);
+        return redirect()->route('admin.car_houses.index');
     }
 
     /**

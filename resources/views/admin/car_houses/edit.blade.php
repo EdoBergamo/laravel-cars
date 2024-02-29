@@ -17,7 +17,7 @@
             <h2 class="text-center">Modifica dati Casa Automobilistica</h2>
         </div>
         <div class="col-12">
-            <form action="{{ route("admin.carhouses.update", $carhouse->id) }}" method="POST">
+            <form action="{{ route("admin.carhouses.update", $carhouses->id) }}" method="POST">
             @csrf
             @method("PUT")
             <div class="form-group">
