@@ -68,7 +68,7 @@ class OptionalController extends Controller
      */
     public function edit(Optional $optional)
     {
-        //
+        return view('admin.optionals.edit', compact('optional'));
     }
 
     /**
@@ -80,7 +80,9 @@ class OptionalController extends Controller
      */
     public function update(UpdateOptionalRequest $request, Optional $optional)
     {
-        //
+        $form = $request->all();
+        $optional->update($form);
+        return redirect()->route('admin.optionals.index');
     }
 
     /**

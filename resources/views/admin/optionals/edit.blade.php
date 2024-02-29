@@ -21,23 +21,23 @@
             @csrf
             @method("PUT")
             <div class="form-group">
-                <label class="mt-3" for="marca">Marca</label>
-                <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca" required  value="{{ old("marca") ?? $car->marca }}">
-                @error('marca')
+                <label class="mt-3" for="name">Nome</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Nome" required  value="">
+                @error('name')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="modello">Modello</label>
-                <textarea type="text" name="modello" id="modello" class="form-control" placeholder="Modello " > {{ old("modello") ?? $car->modello }}</textarea>
-                @error('modello')
+                <label class="mt-3" for="price">Prezzo</label>
+                <textarea type="text" name="price" id="price" class="form-control" placeholder="Prezzo"></textarea>
+                @error('price')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="alimentazione">Alimentazione</label>
-                <textarea type="text" name="alimentazione" id="alimentazione" class="form-control" placeholder="Alimentazione " > {{ old("alimentazione") ?? $car->alimentazione }}</textarea>
-                @error('alimentazione')
+                <label class="mt-3" for="type">Tipo</label>
+                <textarea type="text" name="type" id="type" class="form-control" placeholder="Tipo" ></textarea>
+                @error('type')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
