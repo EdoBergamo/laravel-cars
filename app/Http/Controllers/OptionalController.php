@@ -27,7 +27,7 @@ class OptionalController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.optionals.create");
     }
 
     /**
@@ -49,7 +49,7 @@ class OptionalController extends Controller
      */
     public function show(Optional $optional)
     {
-        //
+        return view("admin.optionals.show", compact("optional"));
     }
 
     /**

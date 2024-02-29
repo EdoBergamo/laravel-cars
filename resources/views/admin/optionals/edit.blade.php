@@ -14,34 +14,34 @@
                 </ul>
             </div>
         @endif
-            <h2 class="text-center">Aggiungi dati optional</h2>
+            <h2 class="text-center">Modifica dati optional</h2>
         </div>
         <div class="col-12">
-            <form action="{{ route("admin.optionals.store") }}" method="POST">
+            <form action="{{ route("admin.optionals.update", $optional->id) }}" method="POST">
             @csrf
-            
+            @method("PUT")
             <div class="form-group">
-                <label class="mt-3" for="name">Nome</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Nome optional" required  value="{{ old("name")  }}">
-                @error('name')
+                <label class="mt-3" for="marca">Marca</label>
+                <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca" required  value="{{ old("marca") ?? $car->marca }}">
+                @error('marca')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="Price">Prezzo optional</label>
-                <textarea type="text" name="Price" id="Price" class="form-control" placeholder="Prezzo optional " > {{ old("price")  }}</textarea>
-                @error('price')
+                <label class="mt-3" for="modello">Modello</label>
+                <textarea type="text" name="modello" id="modello" class="form-control" placeholder="Modello " > {{ old("modello") ?? $car->modello }}</textarea>
+                @error('modello')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="type">Tipologia</label>
-                <textarea type="text" name="type" id="type" class="form-control" placeholder="Tipologia " > {{ old("type")  }}</textarea>
-                @error('type')
+                <label class="mt-3" for="alimentazione">Alimentazione</label>
+                <textarea type="text" name="alimentazione" id="alimentazione" class="form-control" placeholder="Alimentazione " > {{ old("alimentazione") ?? $car->alimentazione }}</textarea>
+                @error('alimentazione')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-           
+       
 
             <a href="{{ route("admin.optionals.index")}}"><button type="submit" class="btn btn-primary mt-3 ">Salva</button></a>
             
