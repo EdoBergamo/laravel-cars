@@ -38,21 +38,6 @@
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="form-group">
-                <label class="mt-3" for="type">Tipo</label>
-                <select class="form-select" name="type">
-                    <option selected>Optionals</option>
-                    <option value="Cerchi in lega">Cerchi in lega</option>
-                    <option value="Sedili riscaldati">Sedili riscaldati</option>
-                    <option value="Interni in pelle">Interni in pelle</option>
-                    <option value="Fari xenon">Fari xenon</option>
-                    <option value="Impianto audio premium">Impianto audio premium</option>
-                  </select>
-
-                @error('type')
-                    <div class ="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
        
 
             <a href="{{ route("admin.optionals.index")}}"><button type="submit" class="btn btn-primary mt-3 ">Salva</button></a>
