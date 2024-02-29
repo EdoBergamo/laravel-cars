@@ -83,6 +83,7 @@ class OptionalController extends Controller
      */
     public function destroy(Optional $optional)
     {
-        //
+        $optional->delete();
+        return redirect()->route("admin.cars.index", ["optional" => $optional]);
     }
 }
