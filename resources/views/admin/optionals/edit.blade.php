@@ -5,15 +5,6 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
             <h2 class="text-center">Modifica dati optional</h2>
         </div>
         <div class="col-12">
@@ -41,13 +32,13 @@
             <div class="form-group">
                 <label class="mt-3" for="type">Tipo</label>
                 <select class="form-select" name="type">
-                    <option selected>Optionals</option>
-                    <option value="Cerchi in lega">Cerchi in lega</option>
-                    <option value="Sedili riscaldati">Sedili riscaldati</option>
-                    <option value="Interni in pelle">Interni in pelle</option>
-                    <option value="Fari xenon">Fari xenon</option>
-                    <option value="Impianto audio premium">Impianto audio premium</option>
-                  </select>
+                    <option value="Cerchi in lega" {{ $optional->type == 'Cerchi in lega' ? 'selected' : '' }}>Cerchi in lega</option>
+                    <option value="Sedili riscaldati" {{ $optional->type == 'Sedili riscaldati' ? 'selected' : '' }}>Sedili riscaldati</option>
+                    <option value="Interni in pelle" {{ $optional->type == 'Interni in pelle' ? 'selected' : '' }}>Interni in pelle</option>
+                    <option value="Fari xenon" {{ $optional->type == 'Fari xenon' ? 'selected' : '' }}>Fari xenon</option>
+                    <option value="Impianto audio premium" {{ $optional->type == 'Impianto audio premium' ? 'selected' : '' }}>Impianto audio premium</option>
+                </select>
+
 
                 @error('type')
                     <div class ="text-danger">{{ $message }}</div>
