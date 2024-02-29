@@ -61,7 +61,7 @@ class CarHouseController extends Controller
      */
     public function edit(CarHouse $carHouse)
     {
-        //
+        return view('admin.car_houses.edit', compact('carHouse'));
     }
 
     /**

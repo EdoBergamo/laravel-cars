@@ -18,7 +18,7 @@ class CarHouseSeeder extends Seeder
         for($i=0;$i<7;$i++){
             $carhouse = new CarHouse();
             $carhouse->name = $faker->words(2, true);
-            $carhouse->phone_number = $faker->numberBetween(999999999, 9999999999);
+            $carhouse->phone_number = $faker->numberBetween(99999999, 999999999);
             $carhouse->email = $faker->email();
             $carhouse->sede = $faker->words(2, true);
             $carhouse->save();
