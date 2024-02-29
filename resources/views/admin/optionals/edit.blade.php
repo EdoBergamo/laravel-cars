@@ -39,16 +39,8 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="type">Tipo</label>
-                <select class="form-select" name="type">
-                    <option selected>Optionals</option>
-                    <option value="Cerchi in lega">Cerchi in lega</option>
-                    <option value="Sedili riscaldati">Sedili riscaldati</option>
-                    <option value="Interni in pelle">Interni in pelle</option>
-                    <option value="Fari xenon">Fari xenon</option>
-                    <option value="Impianto audio premium">Impianto audio premium</option>
-                  </select>
-
+                <label class="mt-3" for="type">Tipologia</label>
+                <input type="text" name="type" id="type" class="form-control" placeholder="Tipologia " value=" {{ old("type")  }}" >
                 @error('type')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
