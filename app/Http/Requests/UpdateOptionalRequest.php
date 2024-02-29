@@ -24,7 +24,20 @@ class UpdateOptionalRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'      => 'required|max:50|min:3',
+            'price'     => 'required',
+            'type'      => 'max:500',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il nome è obbligatorio',
+            'name.max' => 'Il nome deve contenere al massimo 50 caratteri',
+            'name.min' => 'Il nome deve contenere un minimo di 3 caratteri',
+            'price.required' => 'The price is mandatory',
+            'type.max' => 'You can enter a maximum of 500 characters',
         ];
     }
 }
