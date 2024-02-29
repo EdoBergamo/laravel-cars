@@ -34,6 +34,10 @@
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+            @foreach($optionals as $optional)
+            <input type="checkbox" name="optionals[]" id="optional-{{ $optional->id}}" class="form-check-input" value="{{ $optional->id }}">
+            <label for="" class="form-check-label" >  {{ $optional->name }}</label>
+        @endforeach
             <div class="form-group">
                 <label class="mt-3" for="alimentazione">Alimentazione</label>
                 <textarea type="text" name="alimentazione" id="alimentazione" class="form-control" placeholder="Alimentazione " > {{ old("alimentazione")  }}</textarea>

@@ -10,7 +10,7 @@
                     </div>
 
                     <div>
-                        <a href=" {{ route("admin.optionals.create")}} "><button class="btn btn-primary">Add New Car</button></a>
+                        <a href=" {{ route("admin.optionals.create")}} "><button class="btn btn-primary">Add New Optional</button></a>
                     </div>    
                </div>
             </div>
@@ -36,11 +36,11 @@
                                     <a href="{{ route("admin.optionals.show", ["optional" => $optional->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
                                     <a href="{{ route("admin.optionals.edit", ["optional" => $optional->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
 
-                                     {{-- <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
+                                      <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
                                         data-bs-target="#modal_project_delete-{{ $optional->id }}" 
                                         data-id= "{{ $optional->id }}" data-name="{{ $optional->name }}" data-type="optionals">Elimina
                                     </button>
-                                    @include("admin.optionals.modal_delete_optional")  --}}
+                                    @include("admin.optionals.modal_delete_optional")  
  
                                 </td>
                         

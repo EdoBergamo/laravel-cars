@@ -94,6 +94,10 @@ class OptionalController extends Controller
      */
     public function destroy(Optional $optional)
     {
+        
+        Optional::find($optional->id)->cars()->detach();
+            
+        Optional::destroy($optional->id);
         $optional->delete();
         return redirect()->route("admin.optionals.index", ["optional" => $optional]);
     }
