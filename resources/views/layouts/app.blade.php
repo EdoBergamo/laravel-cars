@@ -100,6 +100,12 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Optionals
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.carhouses.index" ? "bg-success" : "" }}"
+                                href="{{ route("admin.carhouses.index") }}"> 
+                                    <i class="fa-solid fa-house fa-lg fa-fw"></i>Car Houses
+                                </a>
+                            </li>
                         </ul>
                     </main>
                 </div>

@@ -15,7 +15,10 @@ class CarHouseController extends Controller
      */
     public function index()
     {
-        //
+
+        $carhouse = CarHouse::all();
+
+        return view("admin.car_houses.index", compact("carhouse"));
     }
 
     /**
