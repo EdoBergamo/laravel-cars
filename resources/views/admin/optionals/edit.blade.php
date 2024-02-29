@@ -23,7 +23,7 @@
             <div class="form-group">
 
                 <label class="mt-3" for="name">Nome</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Nome" required  value="">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Nome" required  value="{{ $optional->name }}">
                 @error('name')
 
                     <div class ="text-danger">{{ $message }}</div>
@@ -32,7 +32,7 @@
             <div class="form-group">
                 <label class="mt-3" for="price">Prezzo</label>
 
-                <textarea type="text" name="price" id="price" class="form-control" placeholder="Prezzo"></textarea>
+                <textarea type="text" name="price" id="price" class="form-control" placeholder="Prezzo">{{ $optional->price }}</textarea>
 
                 @error('price')
                     <div class ="text-danger">{{ $message }}</div>
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="type">Tipo</label>
-                <textarea type="text" name="type" id="type" class="form-control" placeholder="Tipo" ></textarea>
+                <textarea type="text" name="type" id="type" class="form-control" placeholder="Tipo" >{{ $optional->type }}</textarea>
 
                 @error('type')
                     <div class ="text-danger">{{ $message }}</div>
