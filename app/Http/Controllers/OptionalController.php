@@ -15,7 +15,9 @@ class OptionalController extends Controller
      */
     public function index()
     {
-        //
+
+        $optionals = Optional::all();
+        return view ("admin.optionals.index", compact("optionals"));
     }
 
     /**
