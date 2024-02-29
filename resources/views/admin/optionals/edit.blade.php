@@ -23,7 +23,7 @@
             <div class="form-group">
 
                 <label class="mt-3" for="name">Nome</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Nome" required  value="{{ $optional->name }}">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Nome"  value="{{ $optional->name }}">
                 @error('name')
 
                     <div class ="text-danger">{{ $message }}</div>
