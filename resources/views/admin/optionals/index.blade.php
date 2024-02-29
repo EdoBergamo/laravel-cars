@@ -35,13 +35,13 @@
                                 <td>
                                     <a href="{{ route("admin.optionals.show", ["optional" => $optional->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
                                     <a href="{{ route("admin.optionals.edit", ["optional" => $optional->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
-                                    {{-- <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
-                                    <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
-                                        data-bs-target="#modal_project_delete-{{ $car->id }}" 
-                                        data-carid= "{{ $car->id }}" data-postname="{{ $car->modello }}" >Elimina
-                                    </button>
-                                    @include("admin.cars.modal_delete") --}}
 
+                                     {{-- <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
+                                        data-bs-target="#modal_project_delete-{{ $optional->id }}" 
+                                        data-id= "{{ $optional->id }}" data-name="{{ $optional->name }}" data-type="optionals">Elimina
+                                    </button>
+                                    @include("admin.optionals.modal_delete_optional")  --}}
+ 
                                 </td>
                         
                             </tr>

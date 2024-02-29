@@ -84,6 +84,7 @@ class OptionalController extends Controller
         $optional->update($form);
         return redirect()->route('admin.optionals.index');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -94,6 +95,6 @@ class OptionalController extends Controller
     public function destroy(Optional $optional)
     {
         $optional->delete();
-        return redirect()->route("admin.cars.index", ["optional" => $optional]);
+        return redirect()->route("admin.optionals.index", ["optional" => $optional]);
     }
 }

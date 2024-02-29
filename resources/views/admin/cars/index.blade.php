@@ -46,9 +46,10 @@
                                     <a href="{{ route("admin.cars.show", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
                                     <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
                                     <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
-                                        data-bs-target="#modal_project_delete-{{ $car->id }}" 
-                                        data-carid= "{{ $car->id }}" data-postname="{{ $car->modello }}" >Elimina
+                                        data-bs-target="#modal_project_delete-{{ $car->id }}" data-type="cars" 
+                                        data-id="{{ $car->id }}" data-name="{{ $car->name }}" >Elimina
                                     </button>
+                                
                                     @include("admin.cars.modal_delete")
 
                                 </td>
