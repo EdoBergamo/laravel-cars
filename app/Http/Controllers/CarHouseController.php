@@ -28,7 +28,8 @@ class CarHouseController extends Controller
      */
     public function create()
     {
-        //
+        $carhouses = CarHouse::all();
+        return view("admin.car_houses.create", compact("carhouses"));
     }
 
     /**
@@ -61,7 +62,8 @@ class CarHouseController extends Controller
      */
     public function edit(CarHouse $carHouse)
     {
-        //
+
+        return view ("admin.cars.edit", compact ( "carHouse"));
     }
 
     /**

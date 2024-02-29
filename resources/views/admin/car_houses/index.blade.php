@@ -35,8 +35,8 @@
                                 <td>{{ $carhouses->email}}</td>
                                 <td>{{ $carhouses->sede}}</td>
                                 <td>
-                                    {{-- <a href="{{ route("admin.carhouses.show", ["car_houses" => $carhouses->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
-                                    <a href="{{ route("admin.carhouses.edit", ["car_houses" => $carhouses->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a> --}}
+                                     {{-- <a href="{{ route("admin.carhouses.show", ["car_houses" => $carhouses->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a> --}}
+                                    <a href="{{ route("admin.carhouses.edit", ["carhouse" => $carhouses->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a> 
 
                                      {{--  <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
                                         data-bs-target="#modal_project_delete-{{ $optional->id }}" 
