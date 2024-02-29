@@ -10,7 +10,7 @@
                     </div>
 
                     <div>
-                        <a href=" {{ route("admin.cars.create")}} "><button class="btn btn-primary">Add New Car</button></a>
+                        <a href=" {{ route("admin.cars.create")}} "><button class="btn btn-primary">Add New Optional</button></a>
                     </div>    
                </div>
             </div>
