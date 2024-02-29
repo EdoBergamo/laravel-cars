@@ -77,7 +77,7 @@ class CarHouseController extends Controller
     {
         $form = $request->all();
         $carhouse->update($form);
-        return redirect()->route('admin.car_houses.index');
+        return redirect()->route('admin.carhouses.index');
     }
 
     /**
