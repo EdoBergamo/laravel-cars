@@ -68,7 +68,7 @@ class OptionalController extends Controller
      */
     public function edit(Optional $optional)
     {
-        //
+        return view ("admin.optionals.edit", compact ("optional"));
     }
 
     /**
@@ -80,8 +80,13 @@ class OptionalController extends Controller
      */
     public function update(UpdateOptionalRequest $request, Optional $optional)
     {
-        //
+        $form_data = $request->all();
+       
+        $optional->update($form_data);
+
+        return redirect()->route("admin.optionals.index");
     }
+    
 
     /**
      * Remove the specified resource from storage.
