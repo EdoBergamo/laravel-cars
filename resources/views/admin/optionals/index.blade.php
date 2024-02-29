@@ -32,16 +32,16 @@
                                 <td>{{ $optional->name}}</td>
                                 <td>{{ $optional->price}}</td>
                                 <td>{{ $optional->type}}</td>
-                              {{--   <td>
-                                    <a href="{{ route("admin.optionals.show", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
-                                    <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
+                                <td>
+                                    <a href="{{ route("admin.optionals.show", ["optional" => $optional->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>
+                                    {{-- <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
                                     <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
                                         data-bs-target="#modal_project_delete-{{ $car->id }}" 
                                         data-carid= "{{ $car->id }}" data-postname="{{ $car->modello }}" >Elimina
                                     </button>
-                                    @include("admin.cars.modal_delete")
+                                    @include("admin.cars.modal_delete") --}}
 
-                                </td> --}}
+                                </td>
                         
                             </tr>
                             @endforeach  

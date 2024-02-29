@@ -47,9 +47,9 @@ class OptionalController extends Controller
      * @param  \App\Models\Optional  $optional
      * @return \Illuminate\Http\Response
      */
-    public function show(Optional $optional)
+     public function show(optional $optional)
     {
-        //
+        return view ("admin.optionals.show", compact("optional"));
     }
 
     /**
