@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
 use App\Http\Controllers\CarController as CarController;
+use App\Http\Controllers\OptionalController as OptionalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,7 @@ Route::get('/', function () {
 Route::middleware(["auth", "verified"])->name("admin.")->prefix("admin")->group(function(){
     Route::get("/", [DashboardController::class, "index"])->name("dashboard");
     Route::resource("/cars", CarController::class);
+    Route::resource("/optionals", OptionalController::class);
 });
 
 Route::middleware('auth')->group(function () {
