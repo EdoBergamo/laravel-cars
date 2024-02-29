@@ -38,7 +38,15 @@ class OptionalController extends Controller
      */
     public function store(StoreOptionalRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $optional = new Optional();
+    
+        $optional->fill($form_data);
+       
+        $optional->save();
+
+        return redirect()->route("admin.optionals.index");
     }
 
     /**
