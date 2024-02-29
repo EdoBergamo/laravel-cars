@@ -94,7 +94,12 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Cars
                                 </a>
                             </li>
-                            
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.optionals.index" ? "bg-success" : "" }}"
+                                href="{{ route("admin.optionals.index") }}"> 
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Optionals
+                                </a>
+                            </li>
                         </ul>
                     </main>
                 </div>
