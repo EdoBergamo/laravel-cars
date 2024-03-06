@@ -26,8 +26,8 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <div class="logo_laravel">
-                            <img src="https://upload.wikimedia.org/wikipedia/it/thumb/0/04/Logo_della_Ferrari_S.p.A..svg/640px-Logo_della_Ferrari_S.p.A..svg.png" alt="">
+                        <div >
+                            <img class="logo_laravel" src="https://upload.wikimedia.org/wikipedia/it/thumb/0/04/Logo_della_Ferrari_S.p.A..svg/640px-Logo_della_Ferrari_S.p.A..svg.png" alt="">
                             Bool-cars
                         </div>
                         {{-- config('app.name', 'Laravel') --}}

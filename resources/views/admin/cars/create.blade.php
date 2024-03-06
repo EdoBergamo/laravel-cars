@@ -17,7 +17,7 @@
             <h2 class="text-center">Aggiungi dati auto</h2>
         </div>
         <div class="col-12">
-            <form action="{{ route("admin.cars.store") }}" method="POST">
+            <form action="{{ route("admin.cars.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
             
             <div class="form-group">
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="cover_image">Immagine di copertina dell'auto</label>
-                <input type="file" name="cover_image" id="cover_image" accept="image/*" class="form-control" placeholder="Immagine auto">
+                <input type="file" name="cover_image" id="cover_image" accept="image/*" class="form-control">
                 @error('cover_image')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror

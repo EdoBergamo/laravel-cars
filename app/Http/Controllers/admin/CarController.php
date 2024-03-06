@@ -44,11 +44,12 @@ class CarController extends Controller
         $form_data = $request->all();
 
         $car = new Car();
-    
+        
         if($request->hasFile("cover_image")){
             $path = Storage::disk("public")->put("car_images", $form_data["cover_image"]);
             $form_data["cover_image"] = $path;
         }
+        
 
         $car->fill($form_data);
        
@@ -102,9 +103,9 @@ class CarController extends Controller
             if($car->cover_image != null){
                 Storage::disk("public")->delete($car->cover_image);
             }
-        $path= Storage::disk("public")->put("car_images", $form_data["cover_image"]);
+        $path=Storage::disk("public")->put("car_images", $form_data["cover_image"]);
         $form_data["cover_image"] = $path;
-        
+        }
 
         $car->update($form_data);
         
@@ -117,7 +118,7 @@ class CarController extends Controller
             $car->optionals()->sync([]);
         }
         return redirect()->route("admin.cars.index");
-    }
+    
     }
     /**
      * Remove the specified resource from storage.

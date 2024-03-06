@@ -92,7 +92,7 @@
                 @enderror
             </div>
 
-            <a href="{{ route("admin.cars.index")}}"><button type="submit" class="btn btn-primary mt-3 ">Salva</button></a>
+            <a href="{{ route("admin.cars.index")}}"><button type="submit" class="btn btn-primary m-3 ">Salva</button></a>
             
             </form>
         </div>
