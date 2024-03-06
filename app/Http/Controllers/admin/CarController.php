@@ -73,6 +73,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
+       
         $carhouses = CarHouse::all();
         return view ("admin.cars.show", compact("car","carhouses"));
     }
@@ -101,7 +102,7 @@ class CarController extends Controller
     public function update(UpdateCarRequest $request, Car $car)
     {
         $form_data = $request->all();
-       
+     
         if($request->hasFile("cover_image")){
             if($car->cover_image != null){
                 Storage::disk("public")->delete($car->cover_image);
