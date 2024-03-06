@@ -100,23 +100,23 @@
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
-                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.projects.index" ? "bg-primary" : "" }}"
-                                    href=" {{ Route("admin.projects.index")}}">
-                                    <i class="fa-solid fa-newspaper fa-lg fa-fw mx-2"></i>Projects
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.cars.index" ? "bg-primary" : "" }}"
+                                    href=" {{ Route("admin.cars.index")}}">
+                                    <i class="fa-solid fa-newspaper fa-lg fa-fw mx-2"></i>Cars
                                 </a>
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
-                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.types.index" ? "bg-primary" : "" }}"
-                                    href=" {{ Route("admin.types.index")}}">
-                                    <i class="fa-solid fa-folder fa-lg fa-fw mx-2"></i>Types
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.optionals.index" ? "bg-primary" : "" }}"
+                                    href=" {{ Route("admin.optionals.index")}}">
+                                    <i class="fa-solid fa-folder fa-lg fa-fw mx-2"></i>Optionals
                                 </a>
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
-                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.technologies.index" ? "bg-primary" : "" }}"
-                                    href=" {{ Route("admin.technologies.index")}}">
-                                    <i class="fa-solid fa-code fa-lg fa-fw mx-2"></i>Technologies
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.carhouses.index" ? "bg-primary" : "" }}"
+                                    href=" {{ Route("admin.carhouses.index")}}">
+                                    <i class="fa-solid fa-code fa-lg fa-fw mx-2"></i>Car Houses
                                 </a>
                             </li>
                         </ul>

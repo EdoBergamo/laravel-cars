@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("layouts.app")
 
 @section("content")
 
@@ -31,6 +31,13 @@
                 <label class="mt-3" for="modello">Modello</label>
                 <textarea type="text" name="modello" id="modello" class="form-control" placeholder="Modello " > {{ old("modello")  }}</textarea>
                 @error('modello')
+                    <div class ="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label class="mt-3" for="cover_image">Immagine di copertina dell'auto</label>
+                <input type="file" name="cover_image" id="cover_image" accept="image/*" class="form-control" placeholder="Descrizione fumetto">
+                @error('cover_image')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>

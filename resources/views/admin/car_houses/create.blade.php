@@ -14,51 +14,42 @@
                 </ul>
             </div>
         @endif
-            <h2 class="text-center">Modifica dati Casa Automobilistica</h2>
+            <h2 class="text-center">Aggiungi dati Casa Automobilistica</h2>
         </div>
         <div class="col-12">
-            <form action="{{ route("admin.carhouses.update",  $carhouse->id)  }}" method="POST">
+            <form action="{{ route("admin.carhouses.store") }}" method="POST">
             @csrf
-            @method("PUT")
+            
             <div class="form-group">
-
                 <label class="mt-3" for="name">Nome</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Nome"  value="{{ $carhouse->name }}">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Nome optional" required  value="{{ old("name")  }}">
                 @error('name')
-
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="mt-3" for="phone_number">Numero di telefono</label>
-
-                <input type="number" name="phone_number" id="phone_number" class="form-control" placeholder="Prezzo" value="{{ $carhouse->phone_number }}">
-
+                <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="Prezzo optional " value="{{ old("phone_number")  }}"> 
                 @error('price')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="email">  Email</label>
-
-                <input type="text" name="email" id="email" class="form-control"  value="{{ $carhouse->email }}">
-
-                @error('price')
+                <label class="mt-3" for="email">Email</label>
+                <input type="text" name="email" id="email" class="form-control" placeholder="Tipologia " value=" {{ old("email")  }}" >
+                @error('type')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label class="mt-3" for="sede">  Sede</label>
-
-                <input type="text" name="sede" id="sede" class="form-control"  value="{{ $carhouse->sede }}">
-
-                @error('price')
+                <label class="mt-3" for="sede">Sede</label>
+                <input type="text" name="sede" id="sede" class="form-control" placeholder="Tipologia " value=" {{ old("sede")  }}" >
+                @error('type')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-       
 
-            <a href="{{ route("admin.carhouses.index")}}"><button type="submit" class="btn btn-primary mt-3 ">Salva</button></a>
+            <a href="{{ route("admin.optionals.index")}}"><button type="submit" class="btn btn-primary mt-3 ">Salva</button></a>
             
             </form>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CarHouse;
 use App\Http\Requests\StoreCarHouseRequest;
 use App\Http\Requests\UpdateCarHouseRequest;
+use Illuminate\Http\Request;
 
 class CarHouseController extends Controller
 {
@@ -28,8 +29,8 @@ class CarHouseController extends Controller
      */
     public function create()
     {
-        $carhouses = CarHouse::all();
-        return view("admin.car_houses.create", compact("carhouses"));
+        
+        return view("admin.car_houses.create");
     }
 
     /**
@@ -40,7 +41,15 @@ class CarHouseController extends Controller
      */
     public function store(StoreCarHouseRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $carhouse = new CarHouse();
+    
+        $carhouse->fill($form_data);
+       
+        $carhouse->save();
+
+        return redirect()->route("admin.car_houses.index");
     }
 
     /**
@@ -49,9 +58,11 @@ class CarHouseController extends Controller
      * @param  \App\Models\CarHouse  $carHouse
      * @return \Illuminate\Http\Response
      */
-    public function show(CarHouse $carHouse)
+    public function show(CarHouse $carHouse, $id)
     {
-        //
+        $carhouse = CarHouse::find($id);
+        
+        return view ("admin.car_houses.show", compact("carhouse"));
     }
 
     /**
@@ -60,10 +71,10 @@ class CarHouseController extends Controller
      * @param  \App\Models\CarHouse  $carHouse
      * @return \Illuminate\Http\Response
      */
-    public function edit(CarHouse $carHouse)
+    public function edit(CarHouse $carHouse, $id)
     {
-        $carhouses = CarHouse::all();
-        return view ("admin.car_houses.edit", compact ( "carhouses"));
+        $carhouse = CarHouse::find($id);
+        return view ("admin.car_houses.edit", compact ("carhouse"));
     }
 
     /**
@@ -73,7 +84,7 @@ class CarHouseController extends Controller
      * @param  \App\Models\CarHouse  $carHouse
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCarHouseRequest $request, CarHouse $carHouse)
+    public function update(UpdateCarHouseRequest $request, CarHouse $carhouse)
     {
         $form = $request->all();
         $carhouse->update($form);
@@ -86,8 +97,12 @@ class CarHouseController extends Controller
      * @param  \App\Models\CarHouse  $carHouse
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CarHouse $carHouse)
+    public function destroy(CarHouse $carHouse, $id)
     {
-        //
+        CarHouse::find($id)->cars()->detach();
+            
+        CarHouse::destroy($carHouse->id);
+        $carHouse->delete();
+        return redirect()->route("admin.car_houses.index", ["carhouse" => $carHouse]);
     }
 }
