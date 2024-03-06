@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
 use App\Models\Optional;
+use App\Models\CarHouse;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Http\Controllers\Controller;
@@ -30,7 +31,8 @@ class CarController extends Controller
     public function create()
     {
         $optionals = Optional::all();
-        return view("admin.cars.create", compact("optionals"));
+        $carhouses = CarHouse::all();
+        return view("admin.cars.create", compact("optionals", "carhouses"));
     }
 
     /**
@@ -59,8 +61,7 @@ class CarController extends Controller
 
             $car->optionals()->attach($form_data["optionals"]);
         }
-        
-
+       
         return redirect()->route("admin.cars.index");
     }
 
@@ -72,7 +73,8 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        return view ("admin.cars.show", compact("car"));
+        $carhouses = CarHouse::all();
+        return view ("admin.cars.show", compact("car","carhouses"));
     }
 
     /**
@@ -85,7 +87,8 @@ class CarController extends Controller
     {
 
         $optionals = Optional::all();
-        return view ("admin.cars.edit", compact ("car", "optionals"));
+        $carhouses = CarHouse::all();
+        return view ("admin.cars.edit", compact ("car", "optionals","carhouses"));
     }
 
     /**
@@ -117,6 +120,7 @@ class CarController extends Controller
         {
             $car->optionals()->sync([]);
         }
+        
         return redirect()->route("admin.cars.index");
     
     }
@@ -126,27 +130,16 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Car $car)
+    public function destroy(Car $car, Optional $optional)
     {
-        {
+          
+            car::find($car->id)->optionals()->detach();
+            
+            car::destroy($car->id);
             $car->delete();
             return redirect()->route("admin.cars.index", ["car" => $car]);
-        }
+        
     }
 
     
-    public function sommaPrezzo(){
-        $somma = 0;
-
-        $prezzo =  $car->prezzo;
-
-        foreach($optionals as $optional){
-            $somma += $optional->price;
-
-        };
-        $prezzo_complessivo = $car->prezzo  + $somma;
-
-        return sommaPrezzo();
-
-    }
 }

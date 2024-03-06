@@ -15,6 +15,12 @@
                 @else
                     <img src="{{ asset("/img/placeholder1.jpg") }}" alt="{{ $car->name}}" >
                 @endif
+                <h4>Casa Automobilistica</h4>
+                {{--  @forelse($car->carhouses as $carhouse)
+                    {{ $carhouse->name }}
+                    @empty
+                        Nessuna  casa automobilistica selezionata per quest'auto
+                    @endforelse --}}
                 <h4>Alimentazione: </h4>{{ $car->alimentazione}}<hr>
                 <h4>Optional</h4>
                 @forelse($car->optionals as $optional)

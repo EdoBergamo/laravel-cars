@@ -39,12 +39,12 @@
                                     <a href="{{ route("admin.carhouses.edit", ["carhouse" => $carhouses->id ])}}">
                                         <button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a> 
 
-                                    <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
+                                    {{-- <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
                                         data-bs-target="#modal_project_delete-{{ $carhouses->id }}" 
                                         data-id= "{{ $carhouses->id }}" data-name="{{ $carhouses->name }}" data-type="carhouses">Elimina
                                     </button>
                                     @include("admin.car_houses.modal_delete_carhouse")  
-
+ --}}
                                 </td>
                         
                             </tr>

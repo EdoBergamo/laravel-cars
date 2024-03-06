@@ -16,7 +16,7 @@ class Car extends Model
         return $this->belongsToMany(Optional::class);
     }
 
-    public function carhouses() {
+    public function carhouse() {
         return $this->belongsTo(CarHouse::class);
     }
 }

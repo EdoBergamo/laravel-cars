@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Car;
+use App\Models\Optional;
+use App\Models\CarHouse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -9,7 +12,8 @@ class CarController extends Controller
 {
     public function index(){
 
-        $cars = Car::with(["optionals", "car_house"])->paginate(4);
+        $cars = Car::with(["optionals", "carhouses"])->paginate(20);
+        
         
         return response()->json([
             "success"  => true,

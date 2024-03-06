@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('cars', function (Blueprint $table) {
             $table->unsignedBigInteger("carhouse_id")->nullable()->after("id");
             
-            $table->foreign("carhouse_id")->references("id")->on("cars")->onDelete("set null");
+            $table->foreign("carhouse_id")->references("id")->on("car_houses")->onDelete("set null");
         });
     }
 
