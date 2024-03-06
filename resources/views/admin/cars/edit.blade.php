@@ -35,6 +35,21 @@
                 @enderror
             </div>
             <div class="form-group">
+                @if($car->cover_image != null)
+                <div class="my-3">
+
+                    <img src="{{ asset("/storage/" . $car->cover_image) }}" 	alt = "{{ $car->name }}" width="200">
+                </div>
+                @else
+                    <h4> Immagine non impostata </h4>
+                @endif
+                <label class="mt-3" for="cover_image">Immagine di copertina</label>
+                <input type="file" name="cover_image" id="cover_image" accept="image/*" class="form-control" placeholder="Descrizione fumetto">
+                @error('cover_image')
+                    <div class ="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label class="mt-3" for="alimentazione">Alimentazione</label>
                 <textarea type="text" name="alimentazione" id="alimentazione" class="form-control" placeholder="Alimentazione " > {{ old("alimentazione") ?? $car->alimentazione }}</textarea>
                 @error('alimentazione')

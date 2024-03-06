@@ -8,6 +8,7 @@ use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -44,9 +45,15 @@ class CarController extends Controller
 
         $car = new Car();
     
+        if($request->hasFile("cover_image")){
+            $path = Storage::disk("public")->put("car_images", $form_data["cover_image"]);
+            $form_data["cover_image"] = $path;
+        }
+
         $car->fill($form_data);
        
         $car->save();
+        
         if($request->has("optionals")){
 
             $car->optionals()->attach($form_data["optionals"]);
@@ -91,6 +98,14 @@ class CarController extends Controller
     {
         $form_data = $request->all();
        
+        if($request->hasFile("cover_image")){
+            if($car->cover_image != null){
+                Storage::disk("public")->delete($car->cover_image);
+            }
+        $path= Storage::disk("public")->put("car_images", $form_data["cover_image"]);
+        $form_data["cover_image"] = $path;
+        
+
         $car->update($form_data);
         
         if($request->has("optionals")){
@@ -103,7 +118,7 @@ class CarController extends Controller
         }
         return redirect()->route("admin.cars.index");
     }
-
+    }
     /**
      * Remove the specified resource from storage.
      *

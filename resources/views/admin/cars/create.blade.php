@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="cover_image">Immagine di copertina dell'auto</label>
-                <input type="file" name="cover_image" id="cover_image" accept="image/*" class="form-control" placeholder="Descrizione fumetto">
+                <input type="file" name="cover_image" id="cover_image" accept="image/*" class="form-control" placeholder="Immagine auto">
                 @error('cover_image')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror

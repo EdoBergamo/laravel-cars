@@ -47,7 +47,7 @@
                                     <a href="{{ route("admin.cars.edit", ["car" => $car->id ])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fas fa-edit"></i></button></a>
                                     <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
                                         data-bs-target="#modal_project_delete-{{ $car->id }}" data-types="cars" 
-                                        data-id="{{ $car->id }}" data-name="{{ $car->name }}" >Elimina
+                                        data-id="{{ $car->id }}" data-name="{{ $car->marca }}" >Elimina
                                     </button>
                                 
                                     @include("admin.cars.modal_delete")

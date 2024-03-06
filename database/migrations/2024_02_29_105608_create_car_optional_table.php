@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('car_optional', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("car_id");
-	    $table->foreign("car_id")->references("id")->on("cars");
+	        $table->foreign("car_id")->references("id")->on("cars");
 
-	    $table->unsignedBigInteger("optional_id");
-	    $table->foreign("optional_id")->references("id")->on("optionals");
+	        $table->unsignedBigInteger("optional_id");
+	        $table->foreign("optional_id")->references("id")->on("optionals");
             $table->timestamps();
         });
     }
