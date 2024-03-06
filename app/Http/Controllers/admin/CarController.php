@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
+use App\Models\Optional;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
+        $cars = Car::orderByDesc("id")->get();
         return view("admin.cars.index", compact("cars"));
     }
     /**
@@ -27,7 +28,8 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view("admin.cars.create");
+        $optionals = Optional::all();
+        return view("admin.cars.create", compact("optionals"));
     }
 
     /**
@@ -45,6 +47,11 @@ class CarController extends Controller
         $car->fill($form_data);
        
         $car->save();
+        if($request->has("optionals")){
+
+            $car->optionals()->attach($form_data["optionals"]);
+        }
+        
 
         return redirect()->route("admin.cars.index");
     }
@@ -68,7 +75,9 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        return view ("admin.cars.edit", compact ("car"));
+
+        $optionals = Optional::all();
+        return view ("admin.cars.edit", compact ("car", "optionals"));
     }
 
     /**
@@ -83,7 +92,15 @@ class CarController extends Controller
         $form_data = $request->all();
        
         $car->update($form_data);
+        
+        if($request->has("optionals")){
 
+            $car->optionals()->sync($form_data["optionals"]);
+        }
+        else
+        {
+            $car->optionals()->sync([]);
+        }
         return redirect()->route("admin.cars.index");
     }
 
@@ -99,5 +116,21 @@ class CarController extends Controller
             $car->delete();
             return redirect()->route("admin.cars.index", ["car" => $car]);
         }
+    }
+
+    
+    public function sommaPrezzo(){
+        $somma = 0;
+
+        $prezzo =  $car->prezzo;
+
+        foreach($optionals as $optional){
+            $somma += $optional->price;
+
+        };
+        $prezzo_complessivo = $car->prezzo  + $somma;
+
+        return sommaPrezzo();
+
     }
 }

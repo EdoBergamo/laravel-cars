@@ -6,12 +6,13 @@ import.meta.glob([
 ])
 const deleteButtons = document.querySelectorAll(".btn-danger");
 
+
 deleteButtons.forEach((button) => {
     button.addEventListener("click", function(){
-        let project_id = button.getAttribute("data-carid");
-        
+        let id = button.getAttribute("data-id");
+        let optional = button.getAttribute("data-type")
 
-        let url = `${window.location.origin}/admin/cars/${car}`;
+        let url = `${window.location.origin}/admin/${optional}/${id}`;
 
         let form_delete = document.getElementById("form_delete");
 
@@ -19,5 +20,8 @@ deleteButtons.forEach((button) => {
         
 
 
-    })
-})
+    });
+
+});
+
+
