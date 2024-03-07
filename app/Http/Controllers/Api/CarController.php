@@ -32,7 +32,7 @@ class CarController extends Controller
 
         return response()->json([
             'success' => true,
-            'result' => $car
+            'car' => $car
         ]);
     }
 }

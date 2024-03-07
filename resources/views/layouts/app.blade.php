@@ -64,7 +64,7 @@
                                 </a>
     
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route("admin.cars.index") }}">{{__('Dashboard')}}</a>
+                                    <a class="dropdown-item" href="{{ route("admin.cars.index") }}">{{__('Lista Auto')}}</a>
                                     <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -97,7 +97,7 @@
                             <li class="nav-item my-3">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.optionals.index" ? "bg-success" : "" }}"
                                 href="{{ route("admin.optionals.index") }}"> 
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Optionals
+                                    <i class="fa-solid fa-pencil-alt fa-lg fa-fw"></i>Optionals
                                 </a>
                             </li>
                             <li class="nav-item">

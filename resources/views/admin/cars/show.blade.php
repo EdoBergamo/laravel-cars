@@ -22,7 +22,7 @@
                 <h4>Alimentazione: </h4>{{ $car->alimentazione}}<hr>
                 <h4>Optional</h4>
                 @forelse($car->optionals as $optional)
-                    {{ $optional->name }}
+                    -{{ $optional->name }}
                     @empty
                         Nessun optional selezionato per quest'auto
                     @endforelse
