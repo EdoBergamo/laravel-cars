@@ -13,6 +13,7 @@ class CarController extends Controller
     public function index(){
 
         $cars = Car::with(["optionals", "carhouse"])->paginate(6);
+
         
         
         return response()->json([

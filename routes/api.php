@@ -14,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-route::get("/test", function(){
-    return response()->json([
-        "word" => "HELLO WORLD"
-    ]);
-});
-
 Route::get("/cars", [CarController::class, "index"]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
