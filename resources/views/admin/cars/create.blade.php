@@ -43,7 +43,7 @@
             </div>
             <label for="car_house">Case automobilistiche</label>
             @foreach($carhouses as $carhouse)
-                <input type="radio" name="carhouses" id="carhouse-{{ $carhouse->id}}" class="form-check-input mx-2" value="{{ $carhouse->id }}">
+                <input type="radio" name="carhouse_id" id="carhouse-{{ $carhouse->id}}" class="form-check-input mx-2" value="{{ $carhouse->id }}">
                 <label for="" class="form-check-label" >  {{ $carhouse->name }}</label>
             @endforeach
 
