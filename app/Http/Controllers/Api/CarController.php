@@ -21,4 +21,18 @@ class CarController extends Controller
             "results"  => $cars
         ]);
     }
+
+    public function show($id)
+    {
+        $car = Car::with(["optionals", "carhouse"])->find($id);
+
+        if (!$car) {
+            return response()->json(['error' => 'Auto non trovata'], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'result' => $car
+        ]);
+    }
 }
