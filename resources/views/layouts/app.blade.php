@@ -41,7 +41,7 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                                <button class="btn btn-sm btn-primary"><a class="nav-link text-white " href="{{ url('/') }}">{{ __('Home') }}</a></button>
                             </li>
                         </ul>
     
@@ -50,11 +50,11 @@
                             <!-- Authentication Links -->
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <button class="btn btn-sm btn-primary"><a class="nav-link text-white " href="{{ route('login') }}">{{ __('Login') }}</a></button>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <button class="btn btn-sm btn-primary mx-3"><a class="nav-link text-white " href="{{ route('register') }}">{{ __('Register') }}</a></button>
                             </li>
                             @endif
                             @else

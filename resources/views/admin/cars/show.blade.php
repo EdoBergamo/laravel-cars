@@ -27,7 +27,7 @@
                         Nessun optional selezionato per quest'auto
                     @endforelse
             </div>
-            <h4>Prezzo: </h4>{{ $car->prezzo}}
+            <h4>Prezzo: </h4>{{ $car->prezzo}}€
             <h4>Numero porte: </h4>{{ $car->num_porte}}
             <h4>Km. : </h4>{{ $car->chilometri}}
             <h4>Colore: </h4>{{ $car->colore}}<hr>

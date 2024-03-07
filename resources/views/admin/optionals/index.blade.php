@@ -15,7 +15,7 @@
                </div>
             </div>
             <div class="col-12">
-                <table class=" table mt-3 table-stipred">
+                <table class=" table mt-3 table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -30,7 +30,7 @@
                             <tr>
                                 <td>{{ $optional->id}}</td>
                                 <td>{{ $optional->name}}</td>
-                                <td>{{ $optional->price}}</td>
+                                <td>{{ $optional->price}}€</td>
                                 <td>{{ $optional->type}}</td>
                                 <td>
                                     <a href="{{ route("admin.optionals.show", ["optional" => $optional->id ])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></button></a>

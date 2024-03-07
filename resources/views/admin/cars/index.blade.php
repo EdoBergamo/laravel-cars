@@ -15,7 +15,7 @@
                </div>
             </div>
             <div class="col-12">
-                <table class=" table mt-3 table-stipred">
+                <table class=" table mt-3 table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -37,7 +37,7 @@
                                 <td>{{ $car->marca}}</td>
                                 <td>{{ $car->modello}}</td>
                                 <td>{{ $car->alimentazione}}</td>
-                                <td>{{ $car->prezzo}}</td>
+                                <td>{{ $car->prezzo}}€</td>
                                 <td>{{ $car->num_porte}}</td>
                                 <td>{{ $car->chilometri}}</td>
                                 <td>{{ $car->colore}}</td>

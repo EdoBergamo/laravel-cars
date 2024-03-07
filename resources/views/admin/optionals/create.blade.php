@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="type">Tipologia</label>
-                <input type="text" name="type" id="type" class="form-control" placeholder="Tipologia " value=" {{ old("type")  }}" >
+                <input type="text" name="type" id="type" class="form-control" placeholder="Tipologia optional " value=" {{ old("type")  }}" >
                 @error('type')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
