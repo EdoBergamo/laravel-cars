@@ -6,7 +6,7 @@
             <div class="col-12 mt-4">
                <div class="d-flex justify-content-between">
                     <div>
-                        <h2>All cars</h2>
+                        <h2>Apartmen</h2>
                     </div>
 
                     <div>
